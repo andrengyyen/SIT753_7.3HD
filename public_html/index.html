@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script
+      src="https://kit.fontawesome.com/e035f1a289.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--menu on the top of the page the same in every page-->
+    <section id="header">
+      <a href="index.html"><img src="img/logo.png" class="logo" alt="" /></a>
+      
+      <div>
+        <ul id="navbar">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"> <i class="fa-solid fa-bag-shopping"><span id="numItemInCart" style="color:red; font-size: 0.8em; font-weight: bold;"></span></i></a>
+          </li>
+          <li id="helloMessage"><span >Hello Guest</span></li>
+          <li id="login-button"><a style="color: blue;" href="login.html">Login</a></li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <span id="numItemInCart1" style="color:red; font-size: 1em; font-weight: bold;"></span>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <!--slide show of model-->
+    <section id="slideShow">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img/slide1.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides fade">
+          <img src="img/slide2.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides fade">
+          <img src="img/slide3.jpg" style="width: 100%" />
+        </div>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <!--feature that shop support(free-shipping, online order, ...)-->
+    <section id="feature" class="section-p1">
+      <div class="fe-box">
+        <img src="img/features/f1.png" alt="" />
+        <p>Free shipping</p>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f2.jpg" alt="" />
+        <p>Online Order</p>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f3.png" alt="" />
+        <p>Save Money</p>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f4.png" alt="" />
+        <p>Promotion</p>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f5.png" alt="" />
+        <p>Happy Sell</p>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f6.png" alt="" />
+        <p>24/7 Support</p>
+      </div>
+    </section>
+
+    <!--8 products in the feature product-->
+    <section id="product1" class="section-p1">
+      <h2>Feature Products</h2>
+      <p>Summer Collection New Modern Design</p>
+      <div class="pro-container" id="feature-products-container">
+          <!-- Feature products will be dynamically inserted here -->
+      </div>
+  </section>
+
+    <!--Sale off 70% banner-->
+    <section id="banner" class="section-m1">
+      <h2>Up to <span>70% Off</span> - All T-Shirt & Accessories</h2>
+      <button class="normal">Explore</button>
+    </section>
+
+    <!--8 products in new arrival-->
+    <section id="product1" class="section-p1">
+      <h1>New Arrivals</h1>
+      <p>Summer Collection New Modern Design</p>
+      <div class="pro-container" id="new-arrivals-container">
+          <!-- New arrival products will be dynamically inserted here -->
+      </div>
+  </section>
+
+    <!--2 banner in the same row-->
+    <section id="sm-banner" class="section-p1">
+      <div class="banner-box">
+        <p>Hot Event</p>
+        <h2>Buy 1 get 1 free</h2>
+        <span>The best deal for all precious customers</span>
+        <button class="white">Learn more</button>
+      </div>
+      <div class="banner-box banner-box2">
+        <p>Summer/Autumn</p>
+        <h2>New season</h2>
+        <span>Comming Soon!</span>
+        <button class="white">Collection</button>
+      </div>
+    </section>
+
+    <!--3 banner in the same row-->
+    <section id="banner3">
+      <div class="banner-box">
+        <h2>SEASONAL SALE</h2>
+        <p>Spring Collection 50% Off</p>
+      </div>
+      <div class="banner-box banner-box3">
+        <h2>T-SHIRT</h2>
+        <p>Spring Collection 50% Off</p>
+      </div>
+      <div class="banner-box banner-box2">
+        <h2>SHOES</h2>
+        <p>Spring Collection 50% Off</p>
+      </div>
+    </section>
+
+    <!--sign up -->
+    <section id="newsletters" class="section-p1 section-m1">
+      <div class="newstext">
+        <h1>Sign Up For News & Promotion</h1>
+        <p>
+          Get E-mail updates about our shop and <span>special offers</span>.
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your Email" />
+        <button class="normal" style="padding-bottom: 10px;">Sign Up</button>
+      </div>
+    </section>
+
+    <!--footer at the bottom of the page the same in every page-->
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="" />
+        <h4><strong>Contact</strong></h4>
+        <p>
+          <strong>Address: </strong>Deakin University Burwood Campus, Australia
+        </p>
+        <p><strong>Phone: </strong>0123456789</p>
+        <p><strong>Working time: </strong>10:00 - 18:00, Mon-Sat</p>
+        <div class="follow">
+          <h4><strong>Follow us</strong></h4>
+          <div class="icon">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4><strong>About</strong></h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="col">
+        <h4><strong>Account</strong> </h4>
+        <a href="#">Sign in</a>
+        <a href="#">Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Orders</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4><strong>Install App</strong></h4>
+        <p>From App Store or Google Play</p>
+        <div>
+          <img src="img/pay/app.jpg" alt="" />
+          <img src="img/pay/play.jpg" alt="" />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="img/pay/pay.png" alt="" />
+      </div>
+
+      <div class="copyright">
+        <p><strong> ©2024 SIT774 ASS. ALL RIGHTS RESERVED.</strong></p>
+      </div>
+    </footer>
+    
+     <!-- Render Products Dynamically from JSON -->
+     <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          fetch('data/products.json')  // Adjusted path to the JSON file in the data folder
+              .then(response => response.json())
+              .then(data => {
+                  // Render Feature Products (first 8 products)
+                  renderProducts(data.slice(0, 8), 'feature-products-container', true);
+
+                  // Render New Arrivals (next 8 products)
+                  renderProducts(data.slice(8), 'new-arrivals-container', false);
+              })
+              .catch(error => console.error('Error loading products:', error));
+          fetch('/getCartLength')
+              .then(response => response.json())
+              .then(cartLength => {
+                document.getElementById("numItemInCart").innerText = " " + cartLength;
+                document.getElementById("numItemInCart1").innerText = " " + cartLength;
+              })
+            
+          const currentUser = localStorage.getItem('currentUser');
+          const loginButton = document.getElementById('login-button');
+
+          if (currentUser) {
+              loginButton.innerHTML = `<a style="color: blue;" href="#" id="logout-button">Log Out</a>`;
+              const helloMessage = document.getElementById('helloMessage');
+              helloMessage.innerHTML = `<span>Hello <strong>${currentUser}</strong></span>`;
+              helloMessage.style.fontSize = "20px";
+    
+
+              // Add event listener for logout
+              document.getElementById('logout-button').addEventListener('click', () => {
+                  localStorage.removeItem('currentUser');
+                  window.location.reload();
+              });
+          }
+      });
+
+      function renderProducts(products, containerId, addOnclickToFirst) {
+          const container = document.getElementById(containerId);
+          products.forEach((product, index) => {
+              const productDiv = document.createElement('div');
+              productDiv.classList.add('pro');
+
+              // Add onclick event to the first product only in the Feature Products section
+              if (addOnclickToFirst && index === 0) {
+                  productDiv.setAttribute('onclick', "window.location.href='sproduct.html';");
+              }
+
+              productDiv.innerHTML = `
+                  <img src="${product.image}" alt="${product.name}" />
+                  <div class="des">
+                      <span>${product.collection}</span>
+                      <p class="name">${product.name}</p>
+                      <div class="star">
+                          ${'<i class="fas fa-star"></i>'.repeat(product.rating)}
+                      </div>
+                      <p class="price">${product.price}</p>
+                  </div>
+                  <button href="#" class="cart">Add to cart</button>
+              `;
+              container.appendChild(productDiv);
+          });
+          setupAddToCartButtons(products);
+      }
+      // Function to attach the addToCart function to buttons after rendering products
+      function setupAddToCartButtons(items) {
+    // Find all dynamically added "Add to Cart" buttons
+    const buttons = document.querySelectorAll('.cart');
+    
+    buttons.forEach((button, index) => {
+        // Remove any existing event listeners before adding a new one
+        button.replaceWith(button.cloneNode(true));  // Clone the button to remove all event listeners
+        const newButton = document.querySelectorAll('.cart')[index];  // Get the cloned button
+
+        // Attach the event listener to the cloned button
+        newButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default button behavior
+            fetch('/addToCart', {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+                body: JSON.stringify({ index: `${index}` }),  // Send the correct product index to the server
+            })
+            .then((response) => response.json())
+            .then((json) => {
+              alert(json.message);
+              document.getElementById("numItemInCart").innerText = " " + json.cart.length;
+              document.getElementById("numItemInCart1").innerText = " " + json.cart.length;
+            })
+            .catch((error) => console.error('Error adding item to cart:', error));
+        });
+    });
+}
+
+    </script>
+    <script>
+      // /*Slide Show */
+
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+      }
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

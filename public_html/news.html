@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script
+      src="https://kit.fontawesome.com/e035f1a289.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--menu-->
+    <section id="header">
+      <a href="index.html"><img src="img/logo.png" class="logo" alt="" /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a class="active" href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"> <i class="fa-solid fa-bag-shopping"><span id="numItemInCart" style="color:red; font-size: 0.8em; font-weight: bold;"></span></i></a>
+          </li>
+          <li id="helloMessage"><span >Hello Guest</span></li>
+          <li id="login-button"><a style="color: blue;" href="login.html">Login</a></li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <span id="numItemInCart1" style="color:red; font-size: 1em; font-weight: bold;"></span>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <!--#news-->
+    <section id="page-header" class="news-header">
+      <h1>#News</h1>
+      <p>Read all new updates about our products!</p>
+    </section>
+
+    <!--current event-->
+    <section id="news">
+      <div class="news-box">
+        <div class="news-img">
+          <img src="img/news/b1.jpg" alt="" />
+        </div>
+        <div class="news-details">
+          <h4>Sale off 30% for over-300$ bill in 23rd May</h4>
+          <p>
+            The gratitude program applies to SILVER, GOLD and DIAMOND customers,
+            30% OFF ALL LATEST PRODUCTS in Spring Summer 2024 Collection for the
+            whole family with the latest series of products such as T-shirts,
+            shorts, one-piece skirts , home clothes, sunscreen,…
+          </p>
+          <a href="#">Explore More</a>
+        </div>
+        <h1>23/05</h1>
+      </div>
+    </section>
+
+    <!--move to another page-->
+    <section id="pagination" class="section-p1">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <!--sign up-->
+    <section id="newsletters" class="section-p1 section-m1">
+      <div class="newstext">
+        <h1>Sign Up For News & Promotion</h1>
+        <p>
+          Get E-mail updates about our shop and <span>special offers</span>.
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your Email" />
+        <button class="normal" style="padding-bottom: 10px;">Sign Up</button>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="" />
+        <h4><strong>Contact</strong></h4>
+        <p>
+          <strong>Address: </strong>Deakin University Burwood Campus, Australia
+        </p>
+        <p><strong>Phone: </strong>0123456789</p>
+        <p><strong>Working time: </strong>10:00 - 18:00, Mon-Sat</p>
+        <div class="follow">
+          <h4><strong>Follow us</strong></h4>
+          <div class="icon">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4><strong>About</strong></h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="col">
+        <h4><strong>Account</strong> </h4>
+        <a href="#">Sign in</a>
+        <a href="#">Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Orders</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4><strong>Install App</strong></h4>
+        <p>From App Store or Google Play</p>
+        <div>
+          <img src="img/pay/app.jpg" alt="" />
+          <img src="img/pay/play.jpg" alt="" />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="img/pay/pay.png" alt="" />
+      </div>
+
+      <div class="copyright">
+        <p><strong> ©2024 SIT774 ASS. ALL RIGHTS RESERVED.</strong></p>
+      </div>
+    </footer>
+
+    <!--script for navigation bar on mobile screen-->
+    <script src="js/script.js"></script>
+    <script>
+      
+
+      document.addEventListener('DOMContentLoaded', () => {
+      fetch('/getCartLength')
+          .then(response => response.json())
+          .then(cartLength => {
+            document.getElementById("numItemInCart").innerText = " " + cartLength;
+            document.getElementById("numItemInCart1").innerText = " " + cartLength;
+          })
+      });
+    </script>
+  </body>
+</html>

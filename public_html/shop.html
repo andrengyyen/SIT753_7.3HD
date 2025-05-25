@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script
+      src="https://kit.fontawesome.com/e035f1a289.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section id="header">
+      <a href="index.html"><img src="img/logo.png" class="logo" alt="" /></a>
+      <div>
+        <ul id="navbar">
+          <li><a  href="index.html">Home</a></li>
+          <li><a class="active" href="shop.html">Shop</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"> <i class="fa-solid fa-bag-shopping"><span id="numItemInCart" style="color:red; font-size: 0.8em; font-weight: bold;"></span></i></a>
+          </li>
+          <li id="helloMessage"><span >Hello Guest</span></li>
+          <li id="login-button"><a style="color: blue;" href="login.html">Login</a></li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+        <span id="numItemInCart1" style="color:red; font-size: 1em; font-weight: bold;"></span>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <!--header-->
+    <section id="page-header">
+      <h1>#EnjoyLife</h1>
+      <p>Save more with coupons % up to 70% off!</p>
+    </section>
+
+    <!--16 products, first products can go to sproduct page-->
+    <section id="product1" class="section-p1">
+      <div class="pro-container" id="product-container"></div>
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <!--move to another page (cannot use, just for design)-->
+    <section id="pagination" class="section-p1">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <!--sign up-->
+    <section id="newsletters" class="section-p1 section-m1">
+      <div class="newstext">
+        <h1>Sign Up For News & Promotion</h1>
+        <p>
+          Get E-mail updates about our shop and <span>special offers</span>.
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" placeholder="Your Email" />
+        <button class="normal" style="padding-bottom: 10px;">Sign Up</button>
+      </div>
+    </section>
+
+    <!--footer-->
+    <footer class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="" />
+        <h4><strong>Contact</strong></h4>
+        <p>
+          <strong>Address: </strong>Deakin University Burwood Campus, Australia
+        </p>
+        <p><strong>Phone: </strong>0123456789</p>
+        <p><strong>Working time: </strong>10:00 - 18:00, Mon-Sat</p>
+        <div class="follow">
+          <h4><strong>Follow us</strong></h4>
+          <div class="icon">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <h4><strong>About</strong></h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="col">
+        <h4><strong>Account</strong> </h4>
+        <a href="#">Sign in</a>
+        <a href="#">Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Orders</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4><strong>Install App</strong></h4>
+        <p>From App Store or Google Play</p>
+        <div>
+          <img src="img/pay/app.jpg" alt="" />
+          <img src="img/pay/play.jpg" alt="" />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="img/pay/pay.png" alt="" />
+      </div>
+
+      <div class="copyright">
+        <p><strong> ©2024 SIT774 ASS. ALL RIGHTS RESERVED.</strong></p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!--script for render all the items-->
+    <script>
+      // Function to attach the addToCart function to buttons after rendering products
+      function setupAddToCartButtons(items) {
+        // Find all dynamically added "Add to Cart" buttons
+        const buttons = document.querySelectorAll('.cart');
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default button behavior
+                fetch('/addToCart', {
+                    method: 'POST',
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    },
+                    body: JSON.stringify({ index : `${index}` }),  // Send the correct product index to the server
+                })
+                .then((response) => response.json())
+                .then((json) => {
+                  alert(json.message); 
+                  document.getElementById("numItemInCart").innerText = " " + json.cart.length;
+                  document.getElementById("numItemInCart1").innerText = " " + json.cart.length;
+                });
+            });
+        });
+      }
+
+      // Function to render items dynamically and set up "Add to Cart" buttons
+      function renderItems(items) {
+        const productContainer = document.getElementById('product-container'); // Ensure there is a div with id 'product-container'
+
+        productContainer.innerHTML = null; // Clear existing items
+        items.forEach((item, index) => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('pro');
+
+            itemDiv.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" />
+                <div class="des">
+                    <span>${item.collection}</span>
+                    <p class="name">${item.name}</p>
+                    <div class="star">
+                        ${'<i class="fas fa-star"></i>'.repeat(item.rating)}
+                    </div>
+                    <p class="price">${item.price}</p>
+                </div>
+                <button class="cart">Add to cart</button>
+            `;
+            productContainer.appendChild(itemDiv);
+        });
+
+        // After rendering, set up "Add to Cart" buttons with the correct index
+        setupAddToCartButtons(items);
+      }
+
+      // Fetch products and render them dynamically on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('../data/products.json')
+            .then(response => response.json())
+            .then(data => {
+                renderItems(data); // Render items
+            })
+            .catch(error => console.error('Error loading products:', error));
+        fetch('/getCartLength')
+            .then(response => response.json())
+            .then(cartLength => {
+              document.getElementById("numItemInCart").innerText = " " + cartLength;
+              document.getElementById("numItemInCart1").innerText = " " + cartLength;
+            })
+            
+        const currentUser = localStorage.getItem('currentUser');
+        const loginButton = document.getElementById('login-button');
+
+        if (currentUser) {
+            loginButton.innerHTML = `<a style="color: blue;" href="#" id="logout-button">Log Out</a>`;
+            const helloMessage = document.getElementById('helloMessage');
+            helloMessage.innerHTML = `<span>Hello <strong>${currentUser}</strong></span>`;
+            helloMessage.style.fontSize = "20px";
+
+
+            // Add event listener for logout
+            document.getElementById('logout-button').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.reload();
+            });
+        }
+      });
+    </script>
+    
+    
+    <!--script for navigation bar in mobile device screen, the same for every page except index.html-->
+    <!-- <script>
+      const bar = document.getElementById("bar");
+      const close = document.getElementById("close");
+      const nav = document.getElementById("navbar");
+
+      if (bar) {
+        bar.addEventListener("click", () => {
+          nav.classList.add("active");
+        });
+      }
+
+      if (close) {
+        close.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      }
+
+
+    </script> -->
+    
+    
+  </body>
+</html>

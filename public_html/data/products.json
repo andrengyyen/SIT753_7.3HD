@@ -1,0 +1,131 @@
+[
+    {
+      "id": 1,
+      "image": "../img/products/f1.jpg",
+      "collection": "sara summer collection",
+      "name": "Basic Shirt",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 2,
+      "image": "../img/products/f2.jpg",
+      "collection": "sara summer collection",
+      "name": "Soft Man",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 3,
+      "image": "../img/products/f3.jpg",
+      "collection": "sara summer collection",
+      "name": "Flower Shirt",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 4,
+      "image": "../img/products/f4.jpg",
+      "collection": "sara summer collection",
+      "name": "Cherry Blossom",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 5,
+      "image": "../img/products/f5.jpg",
+      "collection": "sara summer collection",
+      "name": "Midnight boy",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 6,
+      "image": "../img/products/f6.jpg",
+      "collection": "sara summer collection",
+      "name": "Free Style Coat",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 7,
+      "image": "../img/products/f7.jpg",
+      "collection": "sara summer collection",
+      "name": "Wide Leg pants",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 8,
+      "image": "../img/products/f8.jpg",
+      "collection": "sara summer collection",
+      "name": "Kitty Woman",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 9,
+      "image": "../img/products/n1.jpg",
+      "collection": "sara summer collection",
+      "name": "Formal Shirt",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 10,
+      "image": "../img/products/n2.jpg",
+      "collection": "sara summer collection",
+      "name": "Plaid Shirt",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 11,
+      "image": "../img/products/n3.jpg",
+      "collection": "sara summer collection",
+      "name": "White Shirt",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 12,
+      "image": "../img/products/n4.jpg",
+      "collection": "sara summer collection",
+      "name": "Slim-fit Camo",
+      "price": "$68",
+      "rating": 5
+    },
+    {
+        "id": 13,
+      "image": "../img/products/n5.jpg",
+      "collection": "sara summer collection",
+      "name": "Formal Shirt",
+      "price": "$48",
+      "rating": 5
+    },
+    {
+        "id": 14,
+      "image": "../img/products/n6.jpg",
+      "collection": "sara summer collection",
+      "name": "Short Pants",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 15,
+      "image": "../img/products/n7.jpg",
+      "collection": "sara summer collection",
+      "name": "Brown Shirt",
+      "price": "$78",
+      "rating": 5
+    },
+    {
+        "id": 16,
+      "image": "../img/products/n8.jpg",
+      "collection": "sara summer collection",
+      "name": "Short Sleeve Shirt",
+      "price": "$78",
+      "rating": 5
+    }
+  ]
+  
