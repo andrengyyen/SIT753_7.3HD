@@ -489,8 +489,13 @@ app.use((err, req, res, next) => {
     res.status(500).send('500: ' + err);
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Web server running at: http://localhost:${port}`);
-    console.log(`Type Ctrl+C to shut down the web server`);
-});
+// Start the server only if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, () => {
+        console.log(`Web server running at: http://localhost:${port}`);
+        console.log(`Type Ctrl+C to shut down the web server`);
+    });
+}
+
+// Export the app for testing
+module.exports = app;
