@@ -33,16 +33,13 @@ db.all('SELECT * FROM User', function(err, rows){
     if (err) {
         return console.error(err.message);
     }
-    if (rows.length === 0) { 
-        console.log("No User in the list!") 
-        
-    } else {
+    else {
         rows.forEach(user => {
             let account = {username : user.username, password : user.password, email : user.email}
             users.push(account);
         });
-        console.log(users);
         
+
     }
 });
 
@@ -53,7 +50,6 @@ fs.readFile(path.join(__dirname, 'public_html', 'data', 'products.json'), 'utf8'
         console.error('Error reading products.json:', err);
     } else {
         products = JSON.parse(data);
-        console.log('Products loaded successfully.');
     }
 });
 
@@ -106,7 +102,7 @@ app.post('/addToCart', (req, res) => {
     if (index !== undefined && index >= 0 && index < products.length) {
         addToCart(index); // Call server-side addToCart function
         
-        res.json({ message: products[index].name + ' added to cart successfully!', cart }); // Send JSON response
+        res.status(200).json({ message: products[index].name + ' added to cart successfully!', cart }); // Send JSON response
         
     } else {
         
@@ -498,4 +494,4 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 // Export the app for testing
-module.exports = app;
+module.exports = { app, users, db }; // Export both app and users
