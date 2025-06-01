@@ -3,6 +3,7 @@ pipeline {
     environment {
         SONAR_TOKEN = credentials('SONAR_TOKEN') // Binds the SONAR_TOKEN credential to an environment variable
         DOCKER_TOKEN = credentials('DOCKER_TOKEN')
+        def version = "v${env.BUILD_NUMBER}"
     }
     tools {
         nodejs 'NodeJS' // Match the name from Global Tool Configuration
@@ -20,9 +21,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm ci'
-                sh 'npm rebuild bcrypt sqlite3'
-                sh 'docker build -t shopping-website:latest .'
+                sh 'docker build -t shopping-website:${version} .'
             }
         }
         stage('Run Tests') {
@@ -73,8 +72,9 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'DOCKER_TOKEN', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
-                        sh 'docker tag shopping-website:latest $DOCKER_USER/shopping-website:latest'
-                        sh 'docker push $DOCKER_USER/shopping-website:latest'
+                        sh 'docker tag shopping-website:${version} $DOCKER_USER/shopping-website:${version}'
+                        sh 'docker push $DOCKER_USER/shopping-website:${version}'
+                        sh 'export BUILD_VERSION=${version} && docker-compose -f docker-compose.yml down && docker-compose -f docker-compose.yml up -d'
                     }
                 }
             }
