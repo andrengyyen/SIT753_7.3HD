@@ -17,6 +17,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
+                sh 'npm rebuild sqlite3 bcrypt --build-from-source'
             }
         }
         stage('Build') {
