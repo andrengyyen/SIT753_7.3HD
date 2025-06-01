@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   shopping-website:
-    image: shopping-website:latest
+    image: shopping-website:${version}
     container_name: shopping-website
     ports:
       - "3000:3000"
