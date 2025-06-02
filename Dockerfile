@@ -1,11 +1,20 @@
-# Use the official Jenkins LTS image as base
-FROM jenkins/jenkins:lts
+# Use Node.js image compatible with M1
+FROM node:18
 
-# Switch to root user to install packages
-USER root
+# Set working directory
+WORKDIR /app
 
-# Install build tools for sqlite3 and bcrypt
-RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt/lists/*
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Switch back to Jenkins user
-USER jenkins
+# Install dependencies
+RUN npm install
+
+# Copy application code
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Start the app
+CMD ["npm", "start"]
