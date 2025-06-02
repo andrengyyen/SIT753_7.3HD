@@ -75,7 +75,7 @@ pipeline {
                         sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                         sh 'docker tag shopping-website:${version} $DOCKER_USER/shopping-website:${version}'
                         sh 'docker push $DOCKER_USER/shopping-website:${version}'
-                        sh 'export BUILD_VERSION=${version} && docker-compose -f docker-compose.yml down && docker-compose -f docker-compose.yml up -d'
+                        sh 'export BUILD_VERSION=${version} && docker-compose -f docker-compose.yaml down && docker-compose -f docker-compose.yaml up -d'
                     }
                 }
             }
