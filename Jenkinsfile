@@ -63,8 +63,8 @@ pipeline {
             steps {
                 script {
                     // Use docker-compose to deploy
-                    sh 'docker-compose -f docker-compose.yml down || true'
-                    sh 'docker-compose -f docker-compose.yml up -d'
+                    sh 'docker-compose -f docker-compose.yaml down || true'
+                    sh 'docker-compose -f docker-compose.yaml up -d'
                 }
             }
         }
